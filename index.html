@@ -453,7 +453,7 @@ img { display: block; max-width: 100%; }
   top: 18px;
   left: 18px;
   z-index: 2;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -899,6 +899,192 @@ img { display: block; max-width: 100%; }
   .nle-h2 { font-size: 34px; }
   .nle-svc-num { font-size: 38px; }
 }
+
+/* ===== O KLINICE - REDESIGN ===== */
+.nle-about-new {
+  display: flex;
+  gap: 0;
+  min-height: 520px;
+}
+.nle-about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 72px;
+}
+.nle-about-owner-sub {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.nle-about-copy {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.72;
+  color: var(--text-sub);
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+.nle-about-stats2 {
+  display: flex;
+  gap: 48px;
+}
+.nle-about-stat {
+  display: flex;
+  flex-direction: column;
+}
+.nle-about-stat-val {
+  font-family: var(--ff-head);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.nle-about-stat-lbl {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.nle-about-photo-new {
+  flex: 1;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.nle-about-photo-new img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== ZABIEGI - IMAGE SLOTS ===== */
+.nle-svc-grid-new {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 56px;
+}
+.nle-svc-card-new {
+  background: var(--card);
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out, background 0.25s, border-color 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.nle-svc-card-new.nle-on { opacity: 1; transform: none; }
+.nle-svc-card-new:hover { background: var(--card-hover); border-color: var(--border-hi); }
+.nle-svc-img {
+  height: 220px;
+  overflow: hidden;
+  background: #111;
+  flex-shrink: 0;
+}
+.nle-svc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.nle-svc-card-new:hover .nle-svc-img img { transform: scale(1.04); }
+.nle-svc-body {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ===== CENNIK - ANIMACJE WIERSZY ===== */
+.nle-price-row {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.nle-price-row.nle-on { opacity: 1; transform: none; }
+
+/* ===== KONTAKT - JEDNA KARTA ===== */
+.nle-contact-card {
+  max-width: 580px;
+  margin: 56px auto 0;
+  padding: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+.nle-crow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.nle-cicon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.nle-crow-content { flex: 1; }
+.nle-crow-content a {
+  font-family: var(--ff-head);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.nle-crow-content a:hover { color: #fff; }
+.nle-crow-content p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-sub);
+}
+.nle-crow-socials {
+  display: flex;
+  gap: 12px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.nle-crow-socials .nle-cicon { align-self: center; }
+.nle-contact-cta {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.nle-contact-cta p {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.6;
+}
+
+/* RESPONSIVE - nowe sekcje */
+@media (max-width: 1024px) {
+  .nle-about-new { flex-direction: column; min-height: auto; }
+  .nle-about-text { padding-right: 0; padding-bottom: 0; }
+  .nle-about-photo-new { height: 400px; }
+}
+@media (max-width: 768px) {
+  .nle-about-new { gap: 0; }
+  .nle-about-photo-new { height: 360px; order: -1; }
+  .nle-about-text { padding-top: 40px; }
+  .nle-about-stats2 { justify-content: center; }
+  .nle-svc-grid-new { grid-template-columns: 1fr; margin-top: 40px; gap: 16px; }
+  .nle-svc-img { height: 200px; }
+  .nle-svc-body { padding: 28px 22px; }
+  .nle-contact-card { padding: 32px 24px; }
+  .nle-crow-content a { font-size: 20px; }
+  .nle-contact-cta .btn-primary { width: 100%; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -943,7 +1129,7 @@ img { display: block; max-width: 100%; }
     <h1 class="nle-hero-h1">Next Level<br>Estetic</h1>
     <p class="nle-hero-sub">Zabiegi medycyny estetycznej wykonywane z najwyższą precyzją i troską o każdy detal.</p>
     <div class="nle-hero-btns">
-      <a href="https://booksy.com/pl-pl/112406_next-level-estetic_medycyna-estetyczna_6623_suwalki" target="_blank" rel="noopener" class="btn-primary">Zarezerwuj wizytę</a>
+      <a href="#nle-contact" class="btn-primary">Zarezerwuj wizytę</a>
       <a href="#nle-services" class="btn-outline">Poznaj zabiegi</a>
     </div>
   </div>
@@ -952,50 +1138,25 @@ img { display: block; max-width: 100%; }
 <!-- O KLINICE -->
 <section id="nle-about" class="nle-section nle-section-sep">
   <div class="nle-inner">
-    <div class="nle-about-grid">
-      <div>
-        <p class="nle-tag nle-fade nle-d1">O klinice</p>
+    <p class="nle-tag nle-fade nle-d1">O klinice</p>
+    <div class="nle-about-new">
+      <div class="nle-about-text">
         <h2 class="nle-h2 nle-fade nle-d2">Profesjonalizm i nowoczesna technologia</h2>
-        <p class="nle-p nle-fade nle-d3">Specjalizuję się w zabiegach medycyny estetycznej z wykorzystaniem najnowocześniejszego sprzętu o potwierdzonej skuteczności. Każdy zabieg poprzedzam konsultacją przedzabiegową, bo Twoje bezpieczeństwo i satysfakcja są dla mnie priorytetem.</p>
-        <div class="nle-stats nle-fade nle-d4">
-          <div class="nle-stat">
-            <p class="nle-stat-val">5.0</p>
-            <p class="nle-stat-label">Średnia ocen</p>
+        <p class="nle-about-owner-sub nle-fade nle-d3">Emilia Wawrzyn</p>
+        <p class="nle-about-copy nle-fade nle-d3">Specjalizuję się w zabiegach medycyny estetycznej z wykorzystaniem najnowocześniejszego sprzętu o potwierdzonej skuteczności. Każdy zabieg poprzedzam konsultacją przedzabiegową, bo Twoje bezpieczeństwo i satysfakcja są dla mnie priorytetem.</p>
+        <div class="nle-about-stats2 nle-fade nle-d4">
+          <div class="nle-about-stat">
+            <span class="nle-about-stat-val">5.0</span>
+            <span class="nle-about-stat-lbl">Średnia ocen</span>
           </div>
-          <div class="nle-stat">
-            <p class="nle-stat-val">400+</p>
-            <p class="nle-stat-label">Opinii klientów</p>
-          </div>
-          <div class="nle-stat">
-            <p class="nle-stat-val">3</p>
-            <p class="nle-stat-label">Urządzenia medical grade</p>
-          </div>
-          <div class="nle-stat">
-            <p class="nle-stat-val">15+</p>
-            <p class="nle-stat-label">Marek preparatów premium</p>
+          <div class="nle-about-stat">
+            <span class="nle-about-stat-val">400+</span>
+            <span class="nle-about-stat-lbl">Opinii online</span>
           </div>
         </div>
       </div>
-      <div class="nle-fade nle-d3">
-        <div class="nle-about-photo">
-          <img src="twarz.webp" alt="Efekt zabiegu medycyny estetycznej">
-        </div>
-        <div class="nle-features">
-          <div class="nle-feat">
-            <span class="nle-feat-num">01</span>
-            <div class="nle-feat-body">
-              <strong>Certyfikowany sprzęt</strong>
-              <span>SECRET RF&reg;, ALMA PRIMEX&reg;, STORZ MEDICAL&reg; - technologie o potwierdzonej skuteczności</span>
-            </div>
-          </div>
-          <div class="nle-feat">
-            <span class="nle-feat-num">02</span>
-            <div class="nle-feat-body">
-              <strong>Bezpieczne preparaty</strong>
-              <span>Wypełniacze Juvéderm, Stylage, Revolax oraz stymulatory tkankowe z renomowanych laboratoriów</span>
-            </div>
-          </div>
-        </div>
+      <div class="nle-about-photo-new nle-fade nle-d3">
+        <img src="wlascicielka.webp" alt="Emilia - specjalistka medycyny estetycznej">
       </div>
     </div>
   </div>
@@ -1006,55 +1167,65 @@ img { display: block; max-width: 100%; }
   <div class="nle-inner">
     <p class="nle-tag nle-fade nle-d1">Zabiegi</p>
     <h2 class="nle-h2 nle-fade nle-d2">Co oferuję</h2>
-    <div class="nle-svc-grid">
-      <div class="nle-svc-card">
-        <p class="nle-svc-num">01</p>
-        <p class="nle-svc-sub">Lifting i odmładzanie</p>
-        <h3 class="nle-svc-title">Radiofrekwencja mikroigłowa i laser</h3>
-        <p class="nle-svc-desc">Technologia SECRET RF&reg; i erbowo-szklany laser przywracają skórze młodzieńczą gęstość i elastyczność. Redukcja blizn, rozstępów, drobnych zmarszczek i wiotkiej skóry.</p>
-        <div class="nle-svc-price">
-          <strong>od 800 zł</strong>
-          SECRET RF&reg; / SECRET ERBIUM-GLASS&reg;
+    <div class="nle-svc-grid-new">
+      <div class="nle-svc-card-new">
+        <div class="nle-svc-img">
+          <img src="zabieg1.jpeg" alt="Radiofrekwencja mikroigłowa i laser" loading="lazy">
+        </div>
+        <div class="nle-svc-body">
+          <p class="nle-svc-num">01</p>
+          <p class="nle-svc-sub">Lifting i odmładzanie</p>
+          <h3 class="nle-svc-title">Radiofrekwencja mikroigłowa i laser</h3>
+          <p class="nle-svc-desc">SECRET RF&reg; i erbowo-szklany laser przywracają gęstość i elastyczność skóry. Redukcja blizn, rozstępów, zmarszczek i wiotkiej skóry.</p>
+          <div class="nle-svc-price">
+            <strong>od 800 zł</strong>
+            SECRET RF&reg; / SECRET ERBIUM-GLASS&reg;
+          </div>
         </div>
       </div>
-      <div class="nle-svc-card">
-        <p class="nle-svc-num">02</p>
-        <p class="nle-svc-sub">Wypełniacze i wolumetria</p>
-        <h3 class="nle-svc-title">Usta, twarz i korekta zmarszczek</h3>
-        <p class="nle-svc-desc">Naturalne efekty powiększania i modelowania rysów przy użyciu kwasu hialuronowego. Powiększone usta, wymodelowane policzki, ostra szczęka, wypełnione bruzdy nosowe.</p>
-        <div class="nle-svc-price">
-          <strong>od 900 zł</strong>
-          Stylage / Revolax / Juvéderm
+      <div class="nle-svc-card-new">
+        <div class="nle-svc-img">
+          <img src="zabieg2.jpeg" alt="Wypełniacze i wolumetria" loading="lazy">
+        </div>
+        <div class="nle-svc-body">
+          <p class="nle-svc-num">02</p>
+          <p class="nle-svc-sub">Wypełniacze i wolumetria</p>
+          <h3 class="nle-svc-title">Usta, twarz i korekta zmarszczek</h3>
+          <p class="nle-svc-desc">Naturalne powiększanie i modelowanie ust, policzków, szczęki i bruzd przy użyciu kwasu hialuronowego.</p>
+          <div class="nle-svc-price">
+            <strong>od 900 zł</strong>
+            Stylage / Revolax / Juvéderm
+          </div>
         </div>
       </div>
-      <div class="nle-svc-card">
-        <p class="nle-svc-num">03</p>
-        <p class="nle-svc-sub">Biorewitalizacja</p>
-        <h3 class="nle-svc-title">Stymulatory tkankowe i tropokolagen</h3>
-        <p class="nle-svc-desc">Głęboka regeneracja i nawilżenie skóry od wewnątrz. Preparaty RRS, SUNEKOS, JALUPRO, PILNEST i kolagen typu 1 - dla twarzy, szyi, dekoltu i okolicy oczu.</p>
-        <div class="nle-svc-price">
-          <strong>od 500 zł</strong>
-          RRS / SUNEKOS / Tropokolagen
+      <div class="nle-svc-card-new">
+        <div class="nle-svc-img">
+          <img src="zabieg3.webp" alt="Biorewitalizacja i stymulatory tkankowe" loading="lazy">
+        </div>
+        <div class="nle-svc-body">
+          <p class="nle-svc-num">03</p>
+          <p class="nle-svc-sub">Biorewitalizacja</p>
+          <h3 class="nle-svc-title">Stymulatory tkankowe i tropokolagen</h3>
+          <p class="nle-svc-desc">Głęboka regeneracja i nawilżenie skóry od wewnątrz. RRS, SUNEKOS, JALUPRO, PLENHYAGE i tropokolagen.</p>
+          <div class="nle-svc-price">
+            <strong>od 500 zł</strong>
+            RRS / SUNEKOS / Tropokolagen
+          </div>
         </div>
       </div>
-      <div class="nle-svc-card">
-        <p class="nle-svc-num">04</p>
-        <p class="nle-svc-sub">Modelowanie sylwetki</p>
-        <h3 class="nle-svc-title">Lipoliza, fala uderzeniowa, ALMA PRIMEX&reg;</h3>
-        <p class="nle-svc-desc">Redukcja tkanki tłuszczowej i ujędrnienie ciała bez skalpela. Lipoliza iniekcyjna, fala uderzeniowa STORZ MEDICAL&reg; oraz urządzenie ALMA PRIMEX&reg; dla widocznych efektów.</p>
-        <div class="nle-svc-price">
-          <strong>od 600 zł</strong>
-          Lipoliza / STORZ MEDICAL&reg; / ALMA PRIMEX&reg;
+      <div class="nle-svc-card-new">
+        <div class="nle-svc-img">
+          <img src="zabieg4.jpg" alt="Modelowanie sylwetki" loading="lazy">
         </div>
-      </div>
-      <div class="nle-svc-card">
-        <p class="nle-svc-num">05</p>
-        <p class="nle-svc-sub">Nici liftingujące</p>
-        <h3 class="nle-svc-title">Lifting bez skalpela</h3>
-        <p class="nle-svc-desc">Natychmiastowy i stopniowo pogłębiający się efekt liftingu przy użyciu nici PCL/PLLA, PDO oraz wypełniających. Bez operacji, z krótkim czasem rekonwalescencji.</p>
-        <div class="nle-svc-price">
-          <strong>od 800 zł</strong>
-          PCL/PLLA / PDO / CAVERN-FILL
+        <div class="nle-svc-body">
+          <p class="nle-svc-num">04</p>
+          <p class="nle-svc-sub">Modelowanie sylwetki</p>
+          <h3 class="nle-svc-title">Lipoliza, fala uderzeniowa, ALMA PRIMEX&reg;</h3>
+          <p class="nle-svc-desc">Redukcja tkanki tłuszczowej bez skalpela. Lipoliza iniekcyjna, fala uderzeniowa STORZ MEDICAL&reg; i ALMA PRIMEX&reg;.</p>
+          <div class="nle-svc-price">
+            <strong>od 600 zł</strong>
+            Lipoliza / STORZ MEDICAL&reg; / ALMA PRIMEX&reg;
+          </div>
         </div>
       </div>
     </div>
@@ -1293,7 +1464,6 @@ img { display: block; max-width: 100%; }
         </div>
         <p class="nle-review-text">"Rzetelny wywiad przed zabiegiem, minimalny ból, zabieg w bezpiecznej i bardzo komfortowej atmosferze. Pani Emilia to encyklopedia wiedzy z bardzo dobrym poczuciem estetyki - efekt przerósł moje oczekiwania."</p>
         <p class="nle-review-author">Joanna Kolenkiewicz</p>
-        <p class="nle-review-date">Google &middot; grudzień 2025</p>
       </div>
       <div class="nle-review-card nle-fade nle-d3">
         <div class="nle-review-stars">
@@ -1305,7 +1475,6 @@ img { display: block; max-width: 100%; }
         </div>
         <p class="nle-review-text">"U Pani Emilii jest się zawsze w najlepszych rękach. Wykonywałam już wiele zabiegów - od wolumetrii twarzy, przez stymulatory tkankowe - i z każdego jestem przeszczęśliwa. Nigdy nie pomyślałabym, że moja twarz może tak wyglądać."</p>
         <p class="nle-review-author">Renata Opanowska</p>
-        <p class="nle-review-date">Google &middot; grudzień 2025</p>
       </div>
       <div class="nle-review-card nle-fade nle-d4">
         <div class="nle-review-stars">
@@ -1317,7 +1486,6 @@ img { display: block; max-width: 100%; }
         </div>
         <p class="nle-review-text">"Jestem bardzo zadowolona z efektu powiększania ust. Zabieg wykonany profesjonalnie, w miłej i spokojnej atmosferze, a efekt wygląda naturalnie i dokładnie tak, jak oczekiwałam. Zdecydowanie polecam ten salon!"</p>
         <p class="nle-review-author">Angelika Kibitlewska</p>
-        <p class="nle-review-date">Google &middot; luty 2026</p>
       </div>
     </div>
     <div class="nle-reviews-cta nle-fade nle-d3">
@@ -1330,39 +1498,33 @@ img { display: block; max-width: 100%; }
 <section id="nle-contact" class="nle-section nle-section-sep">
   <div class="nle-inner">
     <p class="nle-tag nle-fade nle-d1">Kontakt</p>
-    <h2 class="nle-h2 nle-fade nle-d2">Znajdź mnie<br>w Suwałkach</h2>
-    <div class="nle-contact-grid nle-fade nle-d3">
-      <div class="nle-contact-blocks">
-        <div class="nle-contact-block">
-          <label>Adres</label>
-          <p>ul. Teofila Noniewicza 42, lok. 4<br>16-400 Suwałki</p>
-        </div>
-        <div class="nle-contact-block">
-          <label>Telefon</label>
+    <h2 class="nle-h2 nle-fade nle-d2">Znajdź mnie</h2>
+    <div class="nle-contact-card nle-fade nle-d3">
+      <div class="nle-crow">
+        <svg class="nle-cicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.41 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div class="nle-crow-content">
           <a href="tel:+48795924767">795 924 767</a>
         </div>
-        <div class="nle-contact-block">
-          <label>Sociale</label>
-          <div class="nle-contact-social">
-            <a href="https://www.facebook.com/next.level.estetic/" target="_blank" rel="noopener" class="nle-social-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.446 18.627 0 12 0S0 5.446 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.514c-1.491 0-1.956.931-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
-              Facebook
-            </a>
-            <a href="https://www.instagram.com/next.level.estetic/" target="_blank" rel="noopener" class="nle-social-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-              Instagram
-            </a>
-          </div>
-        </div>
-        <div class="nle-contact-block">
-          <label>Udogodnienia</label>
-          <p style="font-size:14px; color: var(--text-sub); line-height: 1.7;">Parking &middot; Płatność kartą &middot; Wi-Fi<br>Dostęp dla osób z niepełnosprawnością<br>Program lojalnościowy</p>
+      </div>
+      <div class="nle-crow">
+        <svg class="nle-cicon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="nle-crow-content">
+          <p>ul. Teofila Noniewicza 42, lok. 4<br>16-400 Suwałki</p>
         </div>
       </div>
-      <div class="nle-contact-cta-box">
-        <h3>Umów wizytę<br>przez Booksy</h3>
-        <p>Zarezerwuj termin online w kilka sekund. Wybierz interesujący Cię zabieg, datę i godzinę. Przed pierwszą wizytą odbędzie się konsultacja przedzabiegowa.</p>
-        <a href="https://booksy.com/pl-pl/112406_next-level-estetic_medycyna-estetyczna_6623_suwalki" target="_blank" rel="noopener" class="btn-primary">Zarezerwuj wizytę</a>
+      <div class="nle-crow-socials">
+        <a href="https://www.facebook.com/next.level.estetic/" target="_blank" rel="noopener" class="nle-social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073C24 5.446 18.627 0 12 0S0 5.446 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.514c-1.491 0-1.956.931-1.956 1.886v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/next.level.estetic/" target="_blank" rel="noopener" class="nle-social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+      </div>
+      <div class="nle-contact-cta">
+        <p>Zarezerwuj termin online w kilka sekund - wybierz zabieg, datę i godzinę.</p>
+        <a href="https://booksy.com/pl-pl/112406_next-level-estetic_medycyna-estetyczna_6623_suwalki" target="_blank" rel="noopener" class="btn-primary">Zarezerwuj wizytę na Booksy</a>
       </div>
     </div>
   </div>
@@ -1371,7 +1533,6 @@ img { display: block; max-width: 100%; }
 <!-- FOOTER -->
 <footer id="nle-footer">
   <p class="nle-footer-name">Next Level Estetic</p>
-  <p class="nle-footer-info">ul. Noniewicza 42, lok. 4 &middot; Suwałki &middot; 795 924 767</p>
   <div class="nle-footer-links">
     <a href="https://www.facebook.com/next.level.estetic/" target="_blank" rel="noopener">Facebook</a>
     <a href="https://www.instagram.com/next.level.estetic/" target="_blank" rel="noopener">Instagram</a>
@@ -1394,18 +1555,8 @@ img { display: block; max-width: 100%; }
     });
   });
 
-  // tabs
-  document.querySelectorAll('.nle-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.nle-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.nle-tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-
-  // service cards - stagger via IntersectionObserver per card (SKILL.md pattern)
-  document.querySelectorAll('.nle-svc-card').forEach((el, i) => {
+  // service cards - stagger via IntersectionObserver per card
+  document.querySelectorAll('.nle-svc-card-new').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.12) + 's';
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -1429,6 +1580,39 @@ img { display: block; max-width: 100%; }
       });
     }, { threshold: 0.08 });
     obs.observe(el);
+  });
+
+  // cennik - animacje wierszy
+  function animatePriceItems(panel, baseDelay) {
+    panel.querySelectorAll('.nle-price-row').forEach((el, i) => {
+      el.classList.remove('nle-on');
+      el.style.transitionDelay = (baseDelay + i * 0.06) + 's';
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('nle-on')));
+    });
+  }
+
+  const pricingSection = document.getElementById('nle-pricing');
+  let pricingAnimated = false;
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !pricingAnimated) {
+        pricingAnimated = true;
+        const activePanel = pricingSection.querySelector('.nle-tab-panel.active');
+        if (activePanel) animatePriceItems(activePanel, 0.5);
+      }
+    });
+  }, { threshold: 0.08 }).observe(pricingSection);
+
+  // tabs - dodaj animacje przy zmianie zakładki
+  document.querySelectorAll('.nle-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nle-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.nle-tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.getElementById(btn.dataset.tab);
+      panel.classList.add('active');
+      animatePriceItems(panel, 0);
+    });
   });
 </script>
 </body>
